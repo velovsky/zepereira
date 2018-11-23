@@ -1,55 +1,53 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <main>
+    <main style="grid-area: body">
       <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import myHeader from '@/components/header/Header.vue'
+import myFooter from '@/components/footer/Footer.vue'
 
 export default {
   name: 'app',
-  components: { myHeader }
+  components: { myHeader, myFooter }
 }
 </script>
 
-<style>
+<style lang="scss">
+
+* {
+  border: 1px solid red;
+}
+
 body {
-  margin: 0;
+  box-sizing: border-box;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  display: grid;
+  grid-template-rows: 100px auto 1fr; //TODO: Global variables
+  grid-template-areas: "header" "body" "footer";
+
+  .my-header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: body;
+  }
+
+  .my-footer {
+    grid-area: footer;
+  }
 }
 
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
 </style>

@@ -1,7 +1,19 @@
 <template>
   <div class="my-header">
-    <img src="@/assets/ze-logo.png" alt="">
-    <div> SOME LINKS </div>
+    <div class="logo">
+      <img src="@/assets/my-logo.png" alt="">
+    </div>
+    <div class="links">
+      <span>
+        INTRO
+      </span>
+      <span>
+        GALLERY
+      </span>
+      <span>
+        CONTACTS
+      </span>
+    </div>
   </div>
 </template>
 

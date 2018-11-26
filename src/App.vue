@@ -43,6 +43,7 @@ body {
 
   main {
     grid-area: body;
+    min-height: calc(100vh - (#{$header-height} + #{$header-padding} * 2) - #{$footer-height});
   }
 
   .my-footer {

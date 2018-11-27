@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.intro {
+
+  .title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  .corpo {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      max-height: 300px;
+    }
+
+    span {
+      max-width: 350px;
+    }
+  }
+}

@@ -2,7 +2,7 @@
   <div id="app">
     <my-header></my-header>
     <main style="grid-area: body">
-      <img src="./assets/logo.png" alt="Vue.js PWA">
+      <!-- <img src="./assets/logo.png" alt="Vue.js PWA"> -->
       <router-view></router-view>
     </main>
     <my-footer></my-footer>

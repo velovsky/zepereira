@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$box-shadow-color: #e6e6e6;
+
 .my-header {
+  position: fixed;
+  width: 100%;
   display: flex;
   height: $header-height;
   padding: $header-padding;
   flex-direction: row;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white; //TODO: decide gloabl colors
+  box-shadow: 0px 2px 4px 0px $box-shadow-color;
 
   .logo {
     height: 100%;
@@ -10,14 +20,24 @@
 
     img {
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      height: $header-height;
+      left: 0;
+      height: 90px;
     }
 
   }
 
   .links {
-    margin-top: 10px;
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+
+    span {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    span:hover {
+      border-bottom: 2px solid black;
+    }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="my-header">
     <div class="logo">
-      <img src="@/assets/my-logo.png" alt="">
+      <img src="@/assets/ze-logo.png" alt="">
     </div>
     <div class="links">
       <span>

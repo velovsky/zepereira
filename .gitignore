@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 /dist/
+/src/assets/gallery/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -12,3 +13,4 @@ upload-config.json
 *.ntvs*
 *.njsproj
 *.sln
+*.psd

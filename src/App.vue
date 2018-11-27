@@ -21,9 +21,9 @@ export default {
 
 <style lang="scss">
 
-* {
-  border: 1px solid red;
-}
+// * {
+//   border: 1px solid red;
+// }
 
 body {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ body {
 
 #app {
   display: grid;
-  grid-template-rows: 100px auto 1fr; //TODO: Global variables
+  grid-template-rows: $page-header-height auto $footer-height;
   grid-template-areas: "header" "body" "footer";
 
   .my-header {
@@ -43,7 +43,7 @@ body {
 
   main {
     grid-area: body;
-    min-height: calc(100vh - (#{$header-height} + #{$header-padding} * 2) - #{$footer-height});
+    min-height: $page-min-height;
   }
 
   .my-footer {

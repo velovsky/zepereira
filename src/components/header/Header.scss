@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 $box-shadow-color: #e6e6e6;
+$active-link: #F44336;
+$transition-time: 0.5s;
+$router-spacing: 10px;
 
 .my-header {
+  @extend %no-select;
   position: fixed;
   width: 100%;
   display: flex;
@@ -11,7 +15,7 @@ $box-shadow-color: #e6e6e6;
   flex-direction: row;
   color: #333;
   font-family: 'Montserrat', sans-serif;
-  background-color: white; //TODO: decide gloabl colors
+  background-color: white; //TODO: decide global colors
   box-shadow: 0px 2px 4px 0px $box-shadow-color;
 
   .logo {
@@ -21,23 +25,39 @@ $box-shadow-color: #e6e6e6;
     img {
       position: absolute;
       left: 0;
-      height: 90px;
+      bottom: 0;
+      height: 60px;
     }
 
   }
 
   .links {
     position: absolute;
+    display: flex;
     right: 30px;
     bottom: 10px;
 
-    span {
-      cursor: pointer;
-      margin-left: 10px;
-    }
+    .link {
 
-    span:hover {
-      border-bottom: 2px solid black;
+      &.router-link-exact-active div:nth-of-type(1) {
+        background-color: $active-link;
+      }
+
+      div {
+        width: calc(100% - #{$router-spacing});
+        height: 2px;
+        transform: translateX($router-spacing);
+        transition: background-color $transition-time;
+      }
+    
+      span {
+        cursor: pointer;
+        margin-left: $router-spacing;
+      }
+  
+      span:hover + div{
+        background-color: black;
+      }
     }
   }
 }

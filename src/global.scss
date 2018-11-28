@@ -1,8 +1,46 @@
+//imports
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 // Variables
-$header-height: 80px;
+$header-height: 40px;
 $header-padding: 10px;
 $footer-height: 20px;
 
 // Page Calcs
 $page-header-height: calc(#{$header-height} + #{$header-padding} * 2); //take into account paddijng
 $page-min-height: calc(100vh - #{$page-header-height} - #{$footer-height});
+
+// no text highlight
+%no-select {
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+}
+
+// Override a
+//a links
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+a:focus {
+  outline: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:-webkit-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}

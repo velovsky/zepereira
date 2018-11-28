@@ -1,0 +1,35 @@
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: underline;
+  }
+
+  > img {
+    padding: 20px;
+    height: 600px;
+  }
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9vw;
+    text-transform: uppercase;
+  }
+
+  .info {
+    font-size: 20px;
+  }
+}
+
+//media queries
+@media only screen and (max-width: 730px)
+{
+  .contacts {
+    flex-direction: column;
+
+    > img {
+      height: 330px;
+    }
+  }
+}

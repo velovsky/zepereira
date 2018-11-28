@@ -2,7 +2,6 @@
   <div id="app">
     <my-header></my-header>
     <main style="grid-area: body">
-      <!-- <img src="./assets/logo.png" alt="Vue.js PWA"> -->
       <router-view></router-view>
     </main>
     <my-footer></my-footer>
@@ -25,7 +24,12 @@ export default {
 //   border: 1px solid red;
 // }
 
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
 body {
+  font-family: 'Dosis', 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
   box-sizing: border-box;
   margin: 0px;
   width: 100%;
@@ -44,6 +48,7 @@ body {
   main {
     grid-area: body;
     min-height: $page-min-height;
+    justify-self: center;
   }
 
   .my-footer {

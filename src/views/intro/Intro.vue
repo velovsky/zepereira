@@ -1,8 +1,8 @@
 <template>
   <div class="intro">
-    <div class="title">
-      <span>hi, welcome to my space</span>
-    </div>
+    <h1 class="title">
+      hi, welcome to my space
+    </h1>
     <div class="corpo">
       <img src="@/assets/gallery/watercolorfaceweb.png" alt="">
       <span>

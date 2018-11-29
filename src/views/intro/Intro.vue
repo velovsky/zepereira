@@ -19,8 +19,7 @@
         id tempus dolor metus eget purus. 
         Ut laoreet posuere magna ut ullamcorper. Cras auctor, sem vitae fermentum molestie, 
         lorem augue vehicula odio, at lobortis urna lorem et dolor. Donec tempus mi ligula, 
-        id malesuada lectus porttitor ac. Praesent consequat finibus odio, accumsan scelerisque 
-        mauris tristique nec.
+        id malesuada lectus porttitor ac.
       </span>
     </div>
   </div>

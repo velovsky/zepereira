@@ -39,8 +39,15 @@ $router-spacing: 10px;
 
     .link {
 
-      &.router-link-exact-active div:nth-of-type(1) {
-        background-color: $active-link;
+      &.router-link-exact-active {
+        
+        div:nth-of-type(1) {
+          background-color: $active-link;
+        }
+
+        span {
+          font-weight: 600;
+        }
       }
 
       div {

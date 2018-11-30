@@ -43,6 +43,7 @@ body {
 
   .my-header {
     grid-area: header;
+    z-index: 2;
   }
 
   main {

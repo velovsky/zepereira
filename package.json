@@ -5,6 +5,7 @@
   "author": "velovsky <ticamara@gmail.com>",
   "private": true,
   "scripts": {
+    "vue": "npm start dev | nodemon server.js",
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -26,6 +27,7 @@
     "chalk": "^2.1.0",
     "connect-history-api-fallback": "^1.4.0",
     "copy-webpack-plugin": "^4.1.1",
+    "cors": "^2.8.5",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.9.0",

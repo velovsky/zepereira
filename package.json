@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "event-stream": "^3.3.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

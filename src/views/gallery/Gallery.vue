@@ -1,5 +1,6 @@
 <template>
   <div class='gallery'>
+    <div class="picture-overlay"></div>
     <div v-for='(image, index) in images' class="wrapper" :key='index'>
       <img :src='image'>
     </div>
@@ -10,8 +11,9 @@
 export default {
   name: 'gallery',
   created: function () {
+    console.log('gallery')
     // /API/listImages.php http://localhost:8181/temp
-    fetch('/API/listImages.php', {method: 'get'})
+    fetch('http://localhost:8181/temp', {method: 'get'})
       .then((response) => {
         if (response.status !== 200 &&
               response.status !== 304) {
@@ -30,6 +32,14 @@ export default {
   data () {
     return {
       images: []
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (!to.params.pictureId) {
+        return
+      }
+      alert(to.params.pictureId)
     }
   }
 }

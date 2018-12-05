@@ -8,7 +8,7 @@ $footer-height: 20px;
 
 // Page Calcs
 $page-header-height: calc(#{$header-height} + #{$header-padding} * 2); //take into account paddijng
-$page-min-height: calc(100vh - #{$page-header-height} - #{$footer-height});
+$page-height: calc(100vh - #{$page-header-height});
 
 // no text highlight
 %no-select {

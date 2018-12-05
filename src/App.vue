@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <main style="grid-area: body">
-      <router-view></router-view>
-    </main>
-    <my-footer></my-footer>
+    <div class="my-body">
+      <main>
+        <router-view></router-view>
+      </main>
+      <my-footer></my-footer>
+    </div>
   </div>
 </template>
 
@@ -34,27 +36,27 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 #app {
   display: grid;
-  grid-template-rows: $page-header-height auto $footer-height;
-  grid-template-areas: "header" "body" "footer";
+  grid-template-rows: $page-header-height $page-height;
+  grid-template-areas: "header" "body";
 
   .my-header {
     grid-area: header;
     z-index: 2;
   }
 
-  main {
+  .my-body {
     grid-area: body;
-    min-height: $page-min-height;
-    justify-self: center;
-  }
-
-  .my-footer {
-    grid-area: footer;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: $page-height;
+    overflow: auto;
+  } 
 }
 
 </style>

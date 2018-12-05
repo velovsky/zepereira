@@ -1,13 +1,15 @@
 .contacts {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 20px;
 
   a {
     text-decoration: underline;
   }
 
   > img {
-    height: calc(#{$page-min-height} - 20px);
+    height: calc(#{$page-height} - #{$footer-height} * 2);
   }
 
   h1 {
@@ -23,13 +25,9 @@
 }
 
 //media queries
-@media only screen and (max-width: 730px)
+@media only screen and (max-width: 567px)
 {
   .contacts {
     flex-direction: column;
-
-    > img {
-      height: 330px;
-    }
   }
 }

@@ -46,7 +46,7 @@ body {
 
   .my-header {
     grid-area: header;
-    z-index: 2;
+    z-index: $header-z;
   }
 
   .my-body {

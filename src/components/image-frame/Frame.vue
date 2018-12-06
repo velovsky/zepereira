@@ -8,8 +8,14 @@
 export default {
   name: 'frame',
   props: {
-    imageInfo: String,
-    default: undefined
+    imageInfo: {
+      type: String,
+      default: undefined
+    },
+    returnComponent: {
+      type: String,
+      default: 'Home'
+    }
   },
   computed: {
     isVisible () {
@@ -21,7 +27,7 @@ export default {
   },
   methods: {
     goBack: function () {
-      this.$router.push({ name: 'Gallery' })
+      this.$router.push({ name: this.returnComponent })
     }
   }
 }

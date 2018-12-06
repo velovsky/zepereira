@@ -10,6 +10,7 @@ $transition-time: 0.2s;
   padding: 20px;
 
   .wrapper {
+    @include fade-in-animation(0.5s);
     position: relative;
     margin: 10px;
     padding: 5px;

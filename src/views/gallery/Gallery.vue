@@ -1,11 +1,12 @@
 <template>
   <div class='gallery'>
-    <image-frame :image-info="selectedImage"></image-frame>
-    <div v-for="(image, index) in images" 
+    <image-frame :image-info="selectedImage" :return-component="currentRoute"></image-frame>
+    <div v-for="(image, index) in images"
+         v-show="areImagesLoaded"
          class="wrapper" 
          :key="index"
          @click="getPicture(index)">
-      <img :src="image">
+      <img :src="image" @load="pictureIsLoaded()">
     </div>
   </div>
 </template>
@@ -17,6 +18,9 @@ export default {
   name: 'gallery',
   components: { imageFrame },
   created: function () {
+    // everytime the gallery is reloaded, reset image loader validator
+    this.areImagesLoaded = false
+    this.numImagesLoaded = 0
     // /API/listImages.php http://localhost:8181/temp
     fetch('http://localhost:8181/temp', {method: 'get'})
       .then((response) => {
@@ -37,22 +41,36 @@ export default {
   data () {
     return {
       images: [],
+      numImagesLoaded: 0,
+      areImagesLoaded: false,
       selectedImage: undefined
     }
   },
   watch: {
     '$route' (to, from) {
       // no parameters in route or no images available
-      if (!to.params.pictureId || this.images.length === 0) {
+      if (to.params.pictureId === undefined || this.images.length === 0) {
         this.selectedImage = undefined
         return
       }
       this.selectedImage = this.images[to.params.pictureId]
     }
   },
+  computed: {
+    currentRoute () {
+      return this.$route.name
+    }
+  },
   methods: {
+    pictureIsLoaded: function () {
+      this.numImagesLoaded++
+      // if all loaded set to true
+      if (this.numImagesLoaded === this.images.length) {
+        this.areImagesLoaded = true
+      }
+    },
     getPicture: function (index) {
-      window.location.href += '/' + index
+      this.$router.push({ name: 'Gallery', params: { pictureId: index } })
     }
   }
 }

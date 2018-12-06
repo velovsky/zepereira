@@ -16,6 +16,7 @@ $page-height: calc(100vh - #{$page-header-height});
 
 // no text highlight
 %no-select {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; /* mobile outline */
 -webkit-touch-callout: none; /* iOS Safari */
 -webkit-user-select: none; /* Safari */
  -khtml-user-select: none; /* Konqueror HTML */

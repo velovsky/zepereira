@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <div class="my-body">
+    <div ref="body" class="my-body">
       <main>
         <router-view></router-view>
       </main>
@@ -16,7 +16,85 @@ import myFooter from '@/components/footer/Footer.vue'
 
 export default {
   name: 'app',
-  components: { myHeader, myFooter }
+  components: { myHeader, myFooter },
+  created: function () {
+    // init route index
+    this.routeIdx = this.getCurrRouteIdx(this.$router.history.current)
+  },
+  mounted: function () {
+    // init touch event handler
+    this.$refs.body.ontouchstart = this.touchstartHandler
+    this.$refs.body.ontouchend = this.touchendHandler
+  },
+  data () {
+    return {
+      routeIdx: null,
+      touch: {
+        startX: undefined,
+        startY: undefined,
+        dist: undefined,
+        thresholdX: 100, // required min horizontal distance traveled to be considered swipe
+        thresholdY: 50, // required min vertical distance traveled to be considered swipe
+        allowedTime: 500, // maximum time allowed to travel that distance
+        elapsedTime: undefined,
+        startTime: undefined
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.routeIdx = this.getCurrRouteIdx(to)
+    }
+  },
+  methods: {
+    getCurrRouteIdx: function (currRoute) {
+      let allRoutes = this.$router.options.routes
+      return allRoutes.findIndex((element) => {
+        return element.name === currRoute.name
+      })
+    },
+    switchRoute: function (hasSwipedRight) {
+      let newIdx = hasSwipedRight ? this.routeIdx - 1 : this.routeIdx + 1
+      let allRoutes = this.$router.options.routes
+      let nextRoute = allRoutes[newIdx]
+
+      // no route
+      if (!nextRoute) {
+        return // do nothing
+      }
+
+      // go to next route
+      this.$router.push({ name: nextRoute.name })
+    },
+    touchstartHandler: function (event) {
+      const touch = this.touch
+      let touchobj = event.changedTouches[0]
+      touch.dist = 0
+      touch.startX = touchobj.pageX
+      touch.startY = touchobj.pageY
+      touch.startTime = new Date().getTime() // record time when finger first makes contact with surface
+    },
+    touchendHandler: function (event) {
+      const touch = this.touch
+      let touchobj = event.changedTouches[0]
+      touch.dist = touchobj.pageX - touch.startX
+      touch.elapsedTime = new Date().getTime() - touch.startTime
+
+      // rules: if swiping/scrolling up/down ignore
+      if (Math.abs(touchobj.pageY - touch.startY) > touch.thresholdY) {
+        return
+      }
+
+      // if no horizontal distance (no swipe) ignore
+      if (Math.abs(touch.dist) < touch.thresholdX) {
+        return
+      }
+
+      // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
+      let swipedRight = (touch.elapsedTime <= touch.allowedTime && touch.dist >= touch.thresholdX && Math.abs(touchobj.pageY - touch.startY) <= touch.thresholdY)
+      this.switchRoute(swipedRight)
+    }
+  }
 }
 </script>
 

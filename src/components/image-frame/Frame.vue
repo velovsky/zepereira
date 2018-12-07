@@ -19,9 +19,12 @@ export default {
   },
   computed: {
     isVisible () {
+      // no image info
       if (!this.imageInfo) {
         return false
       }
+
+      // if imagem then set it visible
       return true
     }
   },

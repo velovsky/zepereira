@@ -21,6 +21,7 @@ export default {
     // everytime the gallery is reloaded, reset image loader validator
     this.areImagesLoaded = false
     this.numImagesLoaded = 0
+
     // /API/listImages.php http://localhost:8181/temp
     fetch('http://localhost:8181/temp', {method: 'get'})
       .then((response) => {
@@ -53,6 +54,8 @@ export default {
         this.selectedImage = undefined
         return
       }
+
+      // select the picture
       this.selectedImage = this.images[to.params.pictureId]
     }
   },
@@ -64,6 +67,7 @@ export default {
   methods: {
     pictureIsLoaded: function () {
       this.numImagesLoaded++
+
       // if all loaded set to true
       if (this.numImagesLoaded === this.images.length) {
         this.areImagesLoaded = true

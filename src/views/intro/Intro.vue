@@ -1,10 +1,10 @@
 <template>
-  <div class="intro">
+  <div v-show="isLoaded" class="intro">
     <h1 class="title">
       hi, welcome to my space
     </h1>
     <div class="corpo">
-      <img src="@/assets/gallery/watercolorfaceweb.png" alt="">
+      <img src="@/assets/gallery/watercolorfaceweb.png" @load="isLoaded = true">
       <span>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Nam tincidunt aliquam magna, sed egestas libero vulputate ut. 
@@ -27,7 +27,12 @@
 
 <script>
 export default {
-  name: 'intro'
+  name: 'intro',
+  data () {
+    return {
+      isLoaded: false
+    }
+  }
 }
 </script>
 

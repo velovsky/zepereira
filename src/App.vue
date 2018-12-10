@@ -3,7 +3,9 @@
     <my-header></my-header>
     <div ref="body" class="my-body">
       <main>
-        <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </main>
       <my-footer></my-footer>
     </div>
@@ -135,6 +137,19 @@ body {
     height: $page-height;
     overflow: auto;
   } 
+}
+
+// transitions FX
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 
 </style>

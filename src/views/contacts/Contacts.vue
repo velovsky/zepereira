@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts">
+  <div v-show="isLoaded" class="contacts">
     <div>
       <h1>Let's Talk!</h1>
       <div class="info">
@@ -13,13 +13,18 @@
         </p>
       </div>
     </div>
-    <img src="@/assets/gallery/16.png" alt="">
+    <img src="@/assets/gallery/16.png" @load="isLoaded = true">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'contacts'
+  name: 'contacts',
+  data () {
+    return {
+      isLoaded: false
+    }
+  }
 }
 </script>
 

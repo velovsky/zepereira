@@ -1,6 +1,7 @@
 <template>
-  <div v-show="isLoaded" class="contacts">
-    <div>
+  <div class="contacts">
+    <loader v-show="!isLoaded"></loader>
+    <div v-show="isLoaded">
       <h1>Let's Talk!</h1>
       <div class="info">
         <p>Lisbon, Portugal</p>
@@ -13,13 +14,16 @@
         </p>
       </div>
     </div>
-    <img src="@/assets/gallery/16.png" @load="isLoaded = true">
+    <img v-show="isLoaded" src="@/assets/gallery/16.png" @load="isLoaded = true">
   </div>
 </template>
 
 <script>
+import loader from '@/components/loader/Loader'
+
 export default {
   name: 'contacts',
+  components: { loader },
   data () {
     return {
       isLoaded: false

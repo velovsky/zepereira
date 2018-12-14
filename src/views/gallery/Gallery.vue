@@ -1,6 +1,7 @@
 <template>
   <div class='gallery'>
     <image-frame :image-info="selectedImage" :return-component="currentRoute"></image-frame>
+    <loader v-show="!areImagesLoaded"></loader>
     <div v-for="(image, index) in images"
          v-show="areImagesLoaded"
          class="wrapper" 
@@ -8,15 +9,20 @@
          @click="getPicture(index)">
       <img :src="image" @load="pictureIsLoaded()">
     </div>
+    <div class="loader">
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
 import imageFrame from '@/components/image-frame/Frame'
+import loader from '@/components/loader/Loader'
 
 export default {
   name: 'gallery',
-  components: { imageFrame },
+  components: { imageFrame, loader },
   created: function () {
     // everytime the gallery is reloaded, reset image loader validator
     this.areImagesLoaded = false

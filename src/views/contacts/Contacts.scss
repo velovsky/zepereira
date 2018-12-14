@@ -29,5 +29,9 @@
 {
   .contacts {
     flex-direction: column;
+
+    > img {
+      max-width: 80vw;
+    }
   }
 }

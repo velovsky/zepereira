@@ -6,15 +6,15 @@
       <div class="info">
         <p>Lisbon, Portugal</p>
         <p>
-          +351 923 929 929
+          +351 935 896 668
           <br>
-          <a href="mailto:zepereira@thismail.com">
-            zepereira@thismail.com
+          <a href="mailto:zezerpereira@gmail.com">
+            zezerpereira@gmail.com
           </a>
         </p>
       </div>
     </div>
-    <img v-show="isLoaded" src="@/assets/gallery/16.png" @load="isLoaded = true">
+    <img v-show="isLoaded" src="@/assets/contacts.png" @load="isLoaded = true">
   </div>
 </template>
 

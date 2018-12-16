@@ -42,6 +42,11 @@ export default {
           return
         }
         this.images = data.images.map((el) => el)
+
+        // if particular picture is specified then select it
+        if (this.$route.params.pictureId !== undefined) {
+          this.selectedImage = this.images[this.$route.params.pictureId]
+        }
       })
       .catch((error) => console.error(error))
   },

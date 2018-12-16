@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
+    text-align: justify;
 
     > * {
       padding: 10px;
@@ -24,9 +25,19 @@
       max-height: 300px;
     }
 
-    span {
+    p {
+      margin: 0;
       min-width: 200px;
       max-width: 320px;
+
+      &::first-letter {
+        font-size: 200%;
+        font-weight: 800;
+      }
+
+      span {
+        padding: 10px;
+      }
     }
   }
 }

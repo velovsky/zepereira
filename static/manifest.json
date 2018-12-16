@@ -1,20 +1,20 @@
 {
-  "name": "zepereira",
+  "name": "Ze Pereira",
   "short_name": "zepereira",
   "icons": [
     {
-      "src": "/static/img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/static/img/icons/favicon-196x196.png",
+      "sizes": "196x196",
       "type": "image/png"
     },
     {
-      "src": "/static/img/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/static/img/icons/mstile-310x310.png",
+      "sizes": "310x310",
       "type": "image/png"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "theme_color": "#F44336"
 }

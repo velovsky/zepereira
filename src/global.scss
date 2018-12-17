@@ -1,5 +1,8 @@
 // imports
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 // Variables
 $header-height: 40px;
@@ -26,33 +29,35 @@ $page-height: calc(100vh - #{$page-header-height});
 }
 
 // Scrollbar override
-::-webkit-scrollbar-button { 
-  display: none; 
-} 
-
-::-webkit-scrollbar-button:hover { 
-  background-color: #AAA; 
-} 
-
-::-webkit-scrollbar-thumb { 
-  background-color: #626262; 
-  border-radius: 4px; 
-} 
-
-::-webkit-scrollbar-thumb:hover { 
-  background-color: #626262; 
-} 
-
-::-webkit-scrollbar-track { 
-  background-color: #efefef; 
-} 
-
-::-webkit-scrollbar-track:hover { 
-  background-color: #CCC; 
-} 
-
-::-webkit-scrollbar { 
-  width: 8px; 
+@media (pointer: fine) {
+  ::-webkit-scrollbar-button { 
+    display: none; 
+  } 
+  
+  ::-webkit-scrollbar-button:hover { 
+    background-color: #AAA; 
+  } 
+  
+  ::-webkit-scrollbar-thumb { 
+    background-color: #626262; 
+    border-radius: 4px; 
+  } 
+  
+  ::-webkit-scrollbar-thumb:hover { 
+    background-color: #626262; 
+  } 
+  
+  ::-webkit-scrollbar-track { 
+    background-color: #efefef; 
+  } 
+  
+  ::-webkit-scrollbar-track:hover { 
+    background-color: #CCC; 
+  } 
+  
+  ::-webkit-scrollbar { 
+    width: 8px; 
+  }
 }
 
 // Override a

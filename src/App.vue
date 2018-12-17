@@ -106,9 +106,6 @@ export default {
 //   border: 1px solid red;
 // }
 
-@import url('https://fonts.googleapis.com/css?family=Dosis');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-
 body {
   font-family: 'Dosis', 'Open Sans Condensed', sans-serif;
   font-size: 16px;

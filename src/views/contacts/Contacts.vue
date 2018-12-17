@@ -12,6 +12,7 @@
             zezerpereira@gmail.com
           </a>
         </p>
+        <links></links>
       </div>
     </div>
     <img v-show="isLoaded" src="@/assets/contacts.png" @load="isLoaded = true">
@@ -20,10 +21,11 @@
 
 <script>
 import loader from '@/components/loader/Loader'
+import links from '@/components/social-links/Links'
 
 export default {
   name: 'contacts',
-  components: { loader },
+  components: { loader, links },
   data () {
     return {
       isLoaded: false

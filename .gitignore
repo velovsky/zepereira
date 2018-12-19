@@ -14,3 +14,4 @@ upload-config.json
 *.njsproj
 *.sln
 *.psd
+*.code-workspace

@@ -1,6 +1,9 @@
 <template>
   <div v-show="isVisible" class="frame" @click="goBack">
-    <img :src="imageInfo" alt="">
+    <span v-show="!isLoaded" class="loader">
+      <span class="loader-inner"></span>
+    </span>
+    <img v-show="isLoaded" :src="imageInfo" @load="isLoaded = true">
   </div>
 </template>
 
@@ -17,6 +20,11 @@ export default {
       default: 'Home'
     }
   },
+  data () {
+    return {
+      isLoaded: false
+    }
+  },
   computed: {
     isVisible () {
       // no image info
@@ -30,6 +38,7 @@ export default {
   },
   methods: {
     goBack: function () {
+      this.isLoaded = false // reset
       this.$router.push({ name: this.returnComponent })
     }
   }

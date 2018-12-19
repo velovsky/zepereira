@@ -16,7 +16,7 @@ export default new Router({
       component: Intro
     },
     {
-      path: '/gallery/:pictureId?',
+      path: '/gallery/:pictureId(\\d+)?',
       name: 'Gallery',
       component: Gallery
     },

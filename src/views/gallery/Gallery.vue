@@ -9,10 +9,6 @@
          @click="getPicture(index)">
       <img :src="image" @load="pictureIsLoaded()">
     </div>
-    <div class="loader">
-      <div></div>
-      <div></div>
-    </div>
   </div>
 </template>
 
@@ -45,7 +41,7 @@ export default {
 
         // if particular picture is specified then select it
         if (this.$route.params.pictureId !== undefined) {
-          this.selectedImage = this.images[this.$route.params.pictureId]
+          this.selectedImage = this.fullImageURL(this.$route.params.pictureId) // this.images[this.$route.params.pictureId]
         }
       })
       .catch((error) => console.error(error))
@@ -67,7 +63,7 @@ export default {
       }
 
       // select the picture
-      this.selectedImage = this.images[to.params.pictureId]
+      this.selectedImage = this.fullImageURL(to.params.pictureId) // this.images[to.params.pictureId]
     }
   },
   computed: {
@@ -86,6 +82,10 @@ export default {
     },
     getPicture: function (index) {
       this.$router.push({ name: 'Gallery', params: { pictureId: index } })
+    },
+    fullImageURL (thumb) {
+      let thumbURL = this.images[thumb]
+      return thumbURL.replace('/thumbs/', '/full/')
     }
   }
 }

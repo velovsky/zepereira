@@ -1,6 +1,6 @@
 {
   "name": "Ze Pereira",
-  "short_name": "zepereira",
+  "short_name": "Ze Pereira",
   "icons": [
     {
       "src": "/static/img/icons/favicon-196x196.png",
@@ -13,8 +13,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#F44336"
+  "background_color": "#ffffff",
+  "theme_color": "#585858"
 }

@@ -1,6 +1,7 @@
 $wrapper-link-size: 40px;
 
 .links {
+  @extend %no-select;
   text-align: center;
   
   .wrapper {

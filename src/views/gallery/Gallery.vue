@@ -20,6 +20,8 @@ export default {
   name: 'gallery',
   components: { imageFrame, loader },
   created: function () {
+    this.$store.commit('updateLoadedState', false)
+
     // everytime the gallery is reloaded, reset image loader validator
     this.areImagesLoaded = false
     this.numImagesLoaded = 0
@@ -64,6 +66,9 @@ export default {
 
       // select the picture
       this.selectedImage = this.fullImageURL(to.params.pictureId) // this.images[to.params.pictureId]
+    },
+    areImagesLoaded: function (val) {
+      this.$store.commit('updateLoadedState', val)
     }
   },
   computed: {

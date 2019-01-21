@@ -37,9 +37,17 @@ import links from '@/components/social-links/Links'
 export default {
   name: 'intro',
   components: { loader, links },
+  created: function () {
+    this.$store.commit('updateLoadedState', false)
+  },
   data () {
     return {
       isLoaded: false
+    }
+  },
+  watch: {
+    isLoaded: function (val) {
+      this.$store.commit('updateLoadedState', val)
     }
   }
 }

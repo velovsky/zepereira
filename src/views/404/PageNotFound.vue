@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  created: function () {
+    this.$store.commit('updateLoadedState', false)
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
 .page-not-found {
   position: absolute;

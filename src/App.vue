@@ -2,12 +2,12 @@
   <div id="app">
     <my-header></my-header>
     <div ref="body" class="my-body">
-      <main>
-        <transition name="fade" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </main>
-      <my-footer></my-footer>
+      <transition-group class="transition" name="fade" mode="out-in" tag="div">
+        <main key="1">
+            <router-view key="2"></router-view>
+        </main>
+        <my-footer key="3"></my-footer>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -128,11 +128,15 @@ body {
 
   .my-body {
     grid-area: body;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: $page-height;
     overflow: auto;
+
+    .transition {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   } 
 }
 

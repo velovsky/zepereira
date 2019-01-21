@@ -1,6 +1,12 @@
 .my-footer {
-  display: none; //TEMP
-  height: $footer-height;
+  margin-top: 20px;
   vertical-align: middle;
   text-align: center;
+  color: white;
+
+  img {
+    height: $footer-height;
+    margin-bottom: 2px;
+    cursor: pointer;
+  }
 }

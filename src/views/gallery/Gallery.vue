@@ -26,7 +26,7 @@ export default {
     this.areImagesLoaded = false
     this.numImagesLoaded = 0
 
-    // URL is defiend accordingly to each enviroment
+    // URL is defined accordingly to each enviroment
     fetch(process.env.GALLERY_API_URL, {method: 'get'})
       .then((response) => {
         if (response.status !== 200 &&
